@@ -7,7 +7,8 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 
 function generatePassword() {
     let password = "";
-    let passLength = document.getElementById("pass-length").value || 15;
+    let inputValue = document.getElementById("pass-length").value;
+    let passLength = (inputValue > 4 && inputValue < 16) ? inputValue : 15;
     for (let i = 0; i < passLength; i++) {
         const index = Math.floor(Math.random() * characters.length);
         password += characters[index];
